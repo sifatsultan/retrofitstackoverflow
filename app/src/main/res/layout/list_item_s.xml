@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:layout_margin="30sp"
+    android:padding="30sp"
     android:background="@android:color/white"
     >
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/profile_image"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="40sp"
         android:layout_marginRight="40sp"
+        android:layout_alignTop="@+id/question"
         fresco:placeholderImage="@drawable/grey_small"
         />
 
@@ -22,7 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
-        android:textSize="16dp"
+        android:textSize="16sp"
+        android:paddingBottom="20sp"
         />
 
     <com.vogella.android.retrofitstackoverflow.FSBoldTextView
@@ -33,7 +35,6 @@
         android:textSize="12sp"
         android:layout_alignStart="@id/question"
         android:layout_alignLeft="@+id/question"
-        android:layout_alignBottom="@+id/profile_image"
-
+        android:layout_below="@+id/question"
         />
 </RelativeLayout>
