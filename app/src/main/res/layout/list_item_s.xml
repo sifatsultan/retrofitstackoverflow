@@ -14,6 +14,7 @@
         android:layout_marginRight="40sp"
         android:layout_alignTop="@+id/question"
         fresco:placeholderImage="@drawable/grey_small"
+        fresco:roundedCornerRadius="15sp"
         />
 
     <com.vogella.android.retrofitstackoverflow.FSLightTextView
