@@ -1,6 +1,7 @@
 package com.vogella.android.retrofitstackoverflow;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,8 @@ import android.widget.RelativeLayout;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Sifat on 2/6/2016.
@@ -18,9 +20,9 @@ public class MyListAdapter extends BaseAdapter {
 
     Context mContext;
     private LayoutInflater mLayoutInflater;
-    ArrayList<Question> stackoverflowQuestions;
+    List<Question> stackoverflowQuestions;
 
-    public MyListAdapter(final Context context, ArrayList<Question> q) {
+    public MyListAdapter(final Context context, List<Question> q) {
         this.mContext = context;
         mLayoutInflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -58,10 +60,15 @@ public class MyListAdapter extends BaseAdapter {
         FSLightTextView questionView = (FSLightTextView)itemView.findViewById(R.id.question);
         FSBoldTextView dateView = (FSBoldTextView)itemView.findViewById(R.id.date);
 
-//        avatarView.setImageURI(Uri.parse(stackoverflowQuestions.get(position).profile_image));
-//        questionView.setText(stackoverflowQuestions.get(position).title);
-//        dateView.setText(stackoverflowQuestions.get(position).creation_date);
-
+        avatarView.setImageURI(Uri.parse(stackoverflowQuestions.get(position).owner.profile_image));
+        questionView.setText(stackoverflowQuestions.get(position).title);
+        dateView.setText(getDate(stackoverflowQuestions.get(position).creation_date));
         return itemView;
+    }
+
+    public String getDate(long t){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(t);
+        return calendar.getTime().toString();
     }
 }

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_margin="30sp"
+    android:background="@android:color/white"
+    >
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/profile_image"
         android:layout_width="130dp"
         android:layout_height="130dp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginRight="40sp"
         fresco:placeholderImage="@drawable/grey_small"
         />
 
@@ -16,7 +21,7 @@
         android:layout_toRightOf="@id/profile_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="question..."
+        android:text="@string/title"
         android:textSize="16dp"
         />
 
@@ -24,10 +29,11 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/question"
-        android:text="date"
-        android:textSize="12dp"
-        android:layout_alignLeft="@id/question"
+        android:text="@string/date"
+        android:textSize="12sp"
+        android:layout_alignStart="@id/question"
+        android:layout_alignLeft="@+id/question"
+        android:layout_alignBottom="@+id/profile_image"
 
         />
 </RelativeLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Retrofitstackoverflow</string>
+    <string name="date">date loading..</string>
+    <string name="title">title loading..</string>
 </resources>
