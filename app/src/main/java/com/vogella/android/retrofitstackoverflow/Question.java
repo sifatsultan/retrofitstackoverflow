@@ -5,13 +5,11 @@ package com.vogella.android.retrofitstackoverflow;
  */
 public class Question {
 //    String title;
-    String creation_date;
+//    String creation_date;
 //    String profile_image;
+    Owner owner;
 
-
-//    @Override
-//    public String toString() {
-//        return(creation_date);
-//    }
-
+    public Owner getOwner(){
+        return owner;
+    }
 }

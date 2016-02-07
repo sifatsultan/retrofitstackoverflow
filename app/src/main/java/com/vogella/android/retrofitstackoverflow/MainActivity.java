@@ -2,7 +2,6 @@ package com.vogella.android.retrofitstackoverflow;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -46,16 +45,14 @@ public class MainActivity extends Activity implements Callback<StackOverFlowQues
 
     @Override
     public void onResponse(Response<StackOverFlowQuestions> response, Retrofit retrofit) {
+        Question question = response.body().items.get(1);
+        Owner owner = question.getOwner();
 
         try {
-            Toast.makeText(MainActivity.this, "second q item "+response.body().items.get(1).creation_date, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "profile_image: "+owner.profile_image, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-            Toast.makeText(this,"error: "+e.toString(),Toast.LENGTH_LONG).show();
-            Log.v("response", "uncessful");
+            Toast.makeText(MainActivity.this, "e: "+e.toString(), Toast.LENGTH_LONG).show();
         }
-
-//        myListAdapter = new MyListAdapter(this, response.body().questions);
-//        listView.setAdapter(myListAdapter);
     }
 
     @Override
