@@ -46,13 +46,7 @@ public class MainActivity extends Activity implements Callback<StackOverFlowQues
     @Override
     public void onResponse(Response<StackOverFlowQuestions> response, Retrofit retrofit) {
         Question question = response.body().items.get(1);
-        Owner owner = question.getOwner();
 
-        try {
-            Toast.makeText(MainActivity.this, "profile_image: "+owner.profile_image, Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            Toast.makeText(MainActivity.this, "e: "+e.toString(), Toast.LENGTH_LONG).show();
-        }
     }
 
     @Override
