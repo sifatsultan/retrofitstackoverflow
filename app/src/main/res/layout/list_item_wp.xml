@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:paddingBottom="40sp"
+    android:background="@android:color/white"
+    >
+
+    <com.vogella.android.retrofitstackoverflow.FSLightTextView
+        android:padding="40sp"
+        android:id="@+id/brand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/brand_name"
+        android:scaleType="centerCrop"
+        android:textSize="25sp"
+        />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/banner_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/brand_name"
+        fresco:placeholderImage="@drawable/grey_small"
+        />
+
+    <com.vogella.android.retrofitstackoverflow.FSBoldTextView
+        android:id="@+id/tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/banner_image"
+        android:text="@string/title"
+        android:textSize="9sp"
+        android:paddingTop="20sp"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        />
+</RelativeLayout>
